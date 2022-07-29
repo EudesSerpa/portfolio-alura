@@ -1,0 +1,225 @@
+.header {
+  position: relative;
+  background-color: var(--background);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.header__logo {
+  cursor: pointer;
+  width: 150px;
+  height: 100%;
+}
+
+/* Nav menu */
+.header__nav-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: var(--font-medium-size);
+  font-weight: 800;
+  background-color: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(.7em);
+  -webkit-backdrop-filter: blur(.7em);
+  letter-spacing: .015em;
+  text-transform: uppercase;
+
+  transform-origin: top;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: transform .3s ease-in;
+}
+
+.header__nav-list.open {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  user-select: initial;
+}
+
+.header__item,
+.header__nav-link {
+  width: 100%;
+  transition: color .2s ease-in, background-color .2s ease-in;
+}
+
+.header__item:hover {
+  color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header__nav-link {
+  display: inline-block;
+  padding: 1em 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Hambuger menu - Icon */
+.header__hamburger {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: .5em;
+  background-color: var(--surface);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px var(--shadow);
+  cursor: pointer;
+  transition: background-color .3s linear;
+}
+
+.header__hamburger:hover,
+.header__hamburger:active,
+.header__hamburger:focus {
+  background-color: var(--primary-color);
+}
+
+.header__hamburger-line,
+.header__hamburger-line::before,
+.header__hamburger-line::after {
+  width: 24px;
+  height: .3em;
+  background-color: var(--tex-on-background);
+  border-radius: .5em;
+  transition: transform 1s, background-color 1s;
+}
+
+.header__hamburger-line::before,
+.header__hamburger-line::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+}
+
+.header__hamburger-line::before {
+  transform: translateY(-.7em);
+}
+
+.header__hamburger-line::after {
+  transform: translateY(.7em);
+}
+
+/* Animations */
+/* Open -> X */
+.header__hamburger.open .header__hamburger-line::before {
+  animation: closeTop .5s ease-in-out forwards;
+}
+
+.header__hamburger.open .header__hamburger-line {
+  background-color: transparent;
+}
+
+.header__hamburger.open .header__hamburger-line::after {
+  animation: closeBottom .5s ease-in-out forwards;
+}
+
+/* Close -> Hamburger */
+.header__hamburger.close .header__hamburger-line::before {
+  animation: openTop .5s ease-in-out forwards;
+}
+
+.header__hamburger.close .header__hamburger-line {
+  background-color: inital;
+  transition-delay: .4s;
+}
+
+.header__hamburger.close .header__hamburger-line::after {
+  animation: openBottom .5s ease-in-out forwards;
+}
+
+@keyframes closeTop {
+  25% {
+    transform: translateX(-.7em);
+  }
+
+  100% {
+    transform: translateX(0) rotate(-225deg);
+  }
+}
+
+@keyframes closeBottom {
+  25% {
+    transform: translateX(.7em);
+  }
+
+  100% {
+    transform: translateX(0) rotate(225deg);
+  }
+}
+
+@keyframes openTop {
+  0% {
+    transform: translateX(0) rotate(-225deg);
+  }
+
+  25% {
+    transform: translateX(-.7em) rotate(-225deg);
+  }
+
+  100% {
+    transform: translate(0, -.7em) rotate(0);
+  }
+}
+
+@keyframes openBottom {
+  0% {
+    transform: translateX(0) rotate(225deg);
+  }
+
+  25% {
+    transform: translateX(.7em) rotate(225deg);
+  }
+
+  100% {
+    transform: translate(0, .7em) rotate(0);
+  }
+}
+
+
+/* Responsive */
+@media screen and (min-width: 640px) {
+  .header__hamburger {
+    display: none;
+  }
+
+  .header__nav,
+  .header__nav-list {
+    height: 100%;
+  }
+
+  .header__nav-list {
+    position: initial;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+
+    background-color: initial;
+    transform: initial;
+    opacity: initial;
+    visibility: initial;
+    z-index: initial;
+  }
+
+  .header__nav-link {
+    padding: .1em 0 0;
+  }
+
+  .header__item:hover {
+    background-color: initial;
+  }
+}

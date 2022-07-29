@@ -7,6 +7,8 @@
     <title>Eudes Serpa's Portfolio</title>
 
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
 
     <!-- FontAwesome Icons: -->
     <link
@@ -18,6 +20,8 @@
     />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <header class="header">
       <div class="wrapper header__content">
         <a href="#home" class="header__logo">
@@ -33,7 +37,7 @@
             <img
               class="header__logo-img"
               src="https://i.postimg.cc/VsBTSN9r/logo-white.png"
-              alt="Eudes Serpa's logo"
+              alt="Serpadev's logo"
               width="150px"
               height="80px"
             />
@@ -41,6 +45,15 @@
         </a>
 
         <nav class="header__nav">
+          <button
+            class="header__hamburger"
+            title="Navigation menu"
+            aria-label="Navigation menu"
+            aria-expanded="false"
+          >
+            <span class="header__hamburger-line" aria-hidden="true"></span>
+          </button>
+
           <ul class="header__nav-list">
             <li class="header__item">
               <a class="header__nav-link" href="#home">Home</a>
@@ -55,21 +68,13 @@
               <a class="header__nav-link" href="#contact">Contact</a>
             </li>
           </ul>
-
-          <div class="header__hamburger" aria-label="menu">
-            <span class="header__hamburger-line" aria-hidden="true"></span>
-          </div>
         </nav>
       </div>
     </header>
 
-    <main class="main wrapper">
+    <main id="main" class="main wrapper">
       <section id="home" class="section home">
         <picture class="home__picture">
-          <source
-            media="(max-width: 767px)"
-            srcset="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
-          />
           <source
             media="(min-width: 768px)"
             srcset="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
@@ -79,18 +84,72 @@
             alt="Eudes Serpa's photo"
             width="420px"
             height="420px"
+            class="home__picture-img"
           />
         </picture>
 
         <div class="home__description">
           <h1 class="section__title home__title">Hi, I'm Eudes Serpa.</h1>
 
+          <p class="home__profession"></p>
+
           <p class="home__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, accert.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            facere quasi debitis non id, incidunt facilis tenetur earum
+            cupiditate, iure explicabo enim! Distinctio beatae commodi harum
+            dolorem consectetur ipsum exercitationem?
           </p>
 
-          <a class="home__button" href="#about"> Learn more </a>
+          <div class="home__btn-download__container">
+            <a
+              class="home__btn-download"
+              href="https://drive.google.com/file/d/1VKe2kf27qySO6jfyr4lVzlXPWQHxC1ai/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+              <i
+                class="fa-solid fa-download home__button-icon"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+
+          <ul class="social-media__list">
+            <li class="social-media__item">
+              <a
+                class="social-media__item-link"
+                href="https://www.linkedin.com/in/eudes-serpa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Eudes Serpa's Linkedin"
+                title="Linkedin"
+              >
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="social-media__item">
+              <a
+                class="social-media__item-link"
+                href="https://github.com/EudesSerpa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Eudes Serpa's Github"
+                title="Github"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
         </div>
+
+        <button
+          class="btn-scroll"
+          title="Button scrool down"
+          aria-label="Button scrool down"
+        >
+          <span class="btn-scroll__line" aria-hidden="true"></span>
+        </button>
       </section>
 
       <section id="about" class="section about">
@@ -392,6 +451,6 @@
       </div>
     </footer>
 
-    <script src="./src/index.js"></script>
+    <script src="./src/index.js" type="module"></script>
   </body>
 </html>
