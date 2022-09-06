@@ -8,20 +8,18 @@
   --primary-color: #C497FC;
   --secondary-color: #03DAC6;
 
-  --primary-color-variant: #3700B3;
-
   --background: #121212;
   --surface: #1f1f1f;
 
   --error: #CF6679;
-  --success: #A3E742;
+  --success: #93D13C;
 
   --shadow: #000000;
 
   /* On colors */
   --text-on-primary: #000000;
   --text-on-secondary: #000000;
-  --tex-on-background: #F2F2F2;
+  --text-on-background: #F2F2F2;
   --text-on-surface: #F2F2F2;
   --text-on-error: #000000;
 
@@ -70,7 +68,7 @@ html {
 body {
   font-size: var(--font-size-base);
   /* 1em = 10px */
-  color: var(--primary-color);
+  color: var(--text-on-background);
   background-color: var(--background);
 }
 
@@ -90,6 +88,13 @@ img {
   height: auto;
 }
 
+input,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
 .wrapper {
   width: 100%;
   max-width: 1200px;
@@ -99,16 +104,41 @@ img {
 
 .section {
   padding-block: 1.5em;
+  font-size: var(--font-medium-size);
 }
 
 .section__title {
-  margin-bottom: .3em;
+  margin-bottom: .4em;
   font-size: var(--title-section);
   text-align: center;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+}
+
+.section__title--highlight {
+  color: var(--primary-color);
+}
+
+.section__title--minor {
+  font-size: var(--subtitle-section);
+}
+
+.section__subtitle {
+  font-size: var(--font-medium-size);
+}
+
+.subsection__title {
+  margin-block: 1em .5em;
+  font-size: var(--font-small-size);
+}
+
+.description__text {
+  max-width: 70ch;
+  font-size: 1.1em;
+  line-height: 1.2;
+  text-align: initial;
 }
 
 /* Skip link */
@@ -141,7 +171,7 @@ img {
   margin-top: 1em;
 }
 
-.social-media__item-link {
+.social-media__link {
   display: grid;
   place-items: center;
   width: 48px;
@@ -153,11 +183,34 @@ img {
   transition: color .3s ease-in, background-color .3s ease-in;
 }
 
-.social-media__item-link:hover,
-.social-media__item-link:active,
-.social-media__item-link:focus {
-  color: var(--surface);
+.social-media__link:hover,
+.social-media__link:active,
+.social-media__link:focus {
+  color: var(--text-on-primary);
   background-color: var(--primary-color);
+}
+
+/* Account link */
+.account__link {
+  position: relative;
+  font-weight: 600;
+}
+
+.account__link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: left .3s ease-out, right .3s ease-out;
+  transform-origin: center;
+}
+
+.account__link:hover::after {
+  left: 0;
+  right: 0;
 }
 
 

@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/about.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="stylesheet" href="./styles/contact.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
 
     <!-- FontAwesome Icons: -->
     <link
@@ -74,26 +78,35 @@
 
     <main id="main" class="main wrapper">
       <section id="home" class="section home">
-        <picture class="home__picture">
-          <source
-            media="(min-width: 768px)"
-            srcset="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
-          />
-          <img
-            src="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
-            alt="Eudes Serpa's photo"
-            width="420px"
-            height="420px"
-            class="home__picture-img"
-          />
-        </picture>
+        <button class="btn-theme" title="toggle theme">
+          <span class="btn-theme__handle"></span>
+        </button>
+
+        <div class="home__picture-container">
+          <picture class="home__picture">
+            <source
+              media="(min-width: 768px)"
+              srcset="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
+            />
+            <img
+              src="https://i.postimg.cc/x8sjQHb2/Ready-Player-Me-Avatar.png"
+              alt="Eudes Serpa's photo"
+              width="420px"
+              height="420px"
+              class="home__picture-img"
+            />
+          </picture>
+        </div>
 
         <div class="home__description">
-          <h1 class="section__title home__title">Hi, I'm Eudes Serpa.</h1>
+          <h1 class="section__title home__title">
+            Hi, I'm
+            <span class="section__title--highlight">Eudes Serpa.</span>
+          </h1>
 
           <p class="home__profession"></p>
 
-          <p class="home__text">
+          <p class="home__text description__text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
             facere quasi debitis non id, incidunt facilis tenetur earum
             cupiditate, iure explicabo enim! Distinctio beatae commodi harum
@@ -118,7 +131,7 @@
           <ul class="social-media__list">
             <li class="social-media__item">
               <a
-                class="social-media__item-link"
+                class="social-media__link"
                 href="https://www.linkedin.com/in/eudes-serpa"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -130,7 +143,7 @@
             </li>
             <li class="social-media__item">
               <a
-                class="social-media__item-link"
+                class="social-media__link"
                 href="https://github.com/EudesSerpa"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -143,310 +156,918 @@
           </ul>
         </div>
 
-        <button
-          class="btn-scroll"
-          title="Button scrool down"
-          aria-label="Button scrool down"
-        >
+        <button class="btn-scroll" title="Scrool down">
           <span class="btn-scroll__line" aria-hidden="true"></span>
         </button>
       </section>
 
       <section id="about" class="section about">
-        <h2 class="section__title">
+        <h2 class="section__title section__title--minor">
           About
           <span class="section__title--highlight">Me</span>
         </h2>
 
-        <div class="about__description">
-          <h3 class="section__subtitle">Information about me</h3>
+        <section class="about__text">
+          <div class="about__description">
+            <h3 class="section__subtitle">Information about me</h3>
 
-          <p>
-            I'm an Electronic Engineer I'm a Web Developer. Lorem ipsum, dolor
-            sit amet consectetur adipisicing elit. Enim vitae ut iusto,
-            consequuntur nemo in eum iste eius consectetur eligendi beatae ipsam
-            tempore at nulla. Vel maxime adipisci aspernatur quibusdam?
-          </p>
-        </div>
+            <p class="about__description-text description__text">
+              I'm an Electronic Engineer I'm a Web Developer. Lorem ipsum, dolor
+              sit amet consectetur adipisicing elit. Enim vitae ut iusto,
+              consequuntur nemo in eum iste eius consectetur eligendi beatae
+              ipsam tempore at nulla. Vel maxime adipisci aspernatur quibusdam?
+            </p>
+            <p class="about__description-text description__text">
+              I'm an Electronic Engineer I'm a Web Developer. Lorem ipsum, dolor
+              sit amet consectetur adipisicing elit. Enim vitae ut iusto,
+              consequuntur nemo in eum iste eius consectetur eligendi beatae
+              ipsam tempore at nulla. Vel maxime adipisci aspernatur quibusdam?
+            </p>
+          </div>
+
+          <div class="cube-container">
+            <div class="cube">
+              <div class="cube__face cube__face--front">
+                <img
+                  src="./assets/icons/html5.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="cube__face cube__face--back">
+                <img
+                  src="./assets/icons/react.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="cube__face cube__face--right">
+                <img
+                  src="./assets/icons/css3.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="cube__face cube__face--left">
+                <img
+                  src="./assets/icons/mysql.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="cube__face cube__face--top">
+                <img
+                  src="./assets/icons/javascript.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <div class="cube__face cube__face--bottom">
+                <img
+                  src="./assets/icons/deno.svg"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section class="about__skills subsection">
           <h4 class="subsection__title">Skills</h4>
 
-          <figure class="about__skills-item">
-            <img
-              class="about__skills-icon"
-              src="./assets/icons/html5.svg"
-              alt="HTML5 icon"
-            />
+          <ul class="about__skills-list">
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/html5.svg"
+                  alt="HTML5 icon"
+                  width="42px"
+                  height="42px"
+                />
 
-            <figcaption class="about__skills-item__caption">HTML5</figcaption>
-          </figure>
-
-          <figure class="subsection-skills__skill">
-            <img
-              class="about__skills-icon"
-              src="./assets/icons/css3.svg"
-              alt="CSS3 icon"
-            />
-            <figcaption class="about__skills-item__caption">CSS3</figcaption>
-          </figure>
-
-          <figure class="subsection-skills__skill">
-            <img
-              class="about__skills-icon"
-              src="./assets/icons/javascript.svg"
-              alt="JavaScript icon"
-            />
-            <figcaption class="about__skills-item__caption">
-              JavaScript
-            </figcaption>
-          </figure>
+                <figcaption class="about__skills-item__caption">
+                  <abbr title="Hypertext Markup Language version 5"></abbr>
+                  HTML5
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/css3.svg"
+                  alt="CSS3 icon"
+                />
+                <figcaption class="about__skills-item__caption">
+                  <abbr title="Cascade Style Sheet version 3"></abbr>
+                  CSS3
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/javascript.svg"
+                  alt="JavaScript icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  JavaScript
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/react.svg"
+                  alt="React icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  React JS
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/webpack.svg"
+                  alt="Webpack icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  Webpack
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/deno.svg"
+                  alt="Deno icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  Deno
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/mysql.svg"
+                  alt="MySQL icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  MySQL
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/jest.svg"
+                  alt="Jest icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  Jest
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/git.svg"
+                  alt="Git icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">Git</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__skills-item">
+                <img
+                  class="about__skills-icon"
+                  src="./assets/icons/netlify.svg"
+                  alt="Netlify icon"
+                  width="42px"
+                  height="42px"
+                />
+                <figcaption class="about__skills-item__caption">
+                  Netlify
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </section>
 
         <section class="about__hobbies subsection">
           <h4 class="subsection__title">Hobbies</h4>
 
-          <figure class="about__hobbies-item">
-            <img
-              class="about__hobbies-icon"
-              src="./assets/illustrations/coding.svg"
-              alt="Coding illustration"
-            />
-
-            <figcaption class="about__hobbies-item__caption">Coding</figcaption>
-          </figure>
-
-          <figure class="subsection-skills__skill">
-            <img
-              class="about__hobbies-icon"
-              src="./assets/illustrations/read.svg"
-              alt="Read illustration"
-            />
-            <figcaption class="about__hobbies-item__caption">
-              Reading
-            </figcaption>
-          </figure>
-
-          <figure class="subsection-skills__skill">
-            <img
-              class="about__hobbies-icon"
-              src="./assets/illustrations/running.svg"
-              alt="Running illustration"
-            />
-            <figcaption class="about__hobbies-item__caption">
-              Running
-            </figcaption>
-          </figure>
+          <ul class="about__hobbies-list">
+            <li>
+              <figure class="about__hobbies-item">
+                <img
+                  class="about__hobbies-icon"
+                  src="./assets/illustrations/coding.svg"
+                  alt="Coding illustration"
+                  width="120px"
+                  height="120px"
+                />
+                <figcaption class="about__hobbies-item__caption">
+                  Coding
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__hobbies-item">
+                <img
+                  class="about__hobbies-icon"
+                  src="./assets/illustrations/reading.svg"
+                  alt="Read illustration"
+                  width="120px"
+                  height="120px"
+                />
+                <figcaption class="about__hobbies-item__caption">
+                  Reading
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__hobbies-item">
+                <img
+                  class="about__hobbies-icon"
+                  src="./assets/illustrations/running.svg"
+                  alt="Running illustration"
+                  width="120px"
+                  height="120px"
+                />
+                <figcaption class="about__hobbies-item__caption">
+                  Running
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__hobbies-item">
+                <img
+                  class="about__hobbies-icon"
+                  src="./assets/illustrations/friends.svg"
+                  alt="Friends illustration"
+                  width="120px"
+                  height="120px"
+                />
+                <figcaption class="about__hobbies-item__caption">
+                  Friends
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="about__hobbies-item">
+                <img
+                  class="about__hobbies-icon"
+                  src="./assets/illustrations/video-games.svg"
+                  alt="Video game illustration"
+                  width="120px"
+                  height="120px"
+                />
+                <figcaption class="about__hobbies-item__caption">
+                  Video games
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
         </section>
 
-        <section class="about__timeline subsection">
+        <section class="about__timeline timeline subsection">
           <h4 class="subsection__title">My Timeline</h4>
 
-          <ul class="about__timeline__list">
-            <li class="about__timeline__list-item">
-              <div class="about__timeline__icon-container current-job">
+          <ul class="timeline__list">
+            <li class="timeline__item">
+              <div class="timeline__icon current-job">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
 
-              <div class="about__timeline__list-item__content">
-                <p class="about__timeline__date">
-                  <span class="about__timeline__date--initial">2019</span>
+              <article class="timeline__content">
+                <p class="timeline__date">
+                  <span class="timeline__date--initial">2019</span>
                   -
-                  <span class="about__timeline__date--final">2020</span>
+                  <span class="timeline__date--final">2020</span>
                 </p>
 
-                <h5 class="about__timeline__title">
-                  Lorem, ipsum dolor.
-                  <span class="about__timeline__title--company">
-                    - Lorem, ipsum.
-                  </span>
+                <h5 class="timeline__title">
+                  Electronic Engineer
+                  <span class="timeline__title--company">
+                    - Universidad del Magdalena</span
+                  >
                 </h5>
 
-                <p class="about__timeline__description">
+                <p class="timeline__description description__text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
                   accert.
                 </p>
-              </div>
+              </article>
             </li>
-
-            <li class="about__timeline__list-item">
-              <div class="about__timeline__icon-container">
+            <li class="timeline__item">
+              <div class="timeline__icon">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
 
-              <div class="about__timeline__list-item__content">
-                <p class="about__timeline__date">
-                  <span class="about__timeline__date--initial">2019</span>
+              <article class="timeline__content">
+                <p class="timeline__date">
+                  <span class="timeline__date--initial">2019</span>
                   -
-                  <span class="about__timeline__date--final">2020</span>
+                  <span class="timeline__date--final">2020</span>
                 </p>
 
-                <h5 class="about__timeline__title">
-                  Lorem, ipsum dolor.
-                  <span class="about__timeline__title--company">
-                    - Lorem, ipsum.
-                  </span>
+                <h5 class="timeline__title">
+                  Bachelor Academic
+                  <span class="timeline__title--company">
+                    - I.E Normal Superior de Corozal</span
+                  >
                 </h5>
 
-                <p class="about__timeline__description">
+                <p class="timeline__description description__text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
                   accert.
                 </p>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__icon">
+                <i class="fa-solid fa-graduation-cap"></i>
               </div>
+
+              <article class="timeline__content">
+                <p class="timeline__date">
+                  <span class="timeline__date--initial">2019</span>
+                  -
+                  <span class="timeline__date--final">2020</span>
+                </p>
+
+                <h5 class="timeline__title">
+                  Lorem, ipsum dolor
+                  <span class="timeline__title--company"> - Lorem, ipsum </span>
+                </h5>
+
+                <p class="timeline__description description__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                  accert.
+                </p>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+
+              <article class="timeline__content">
+                <p class="timeline__date">
+                  <span class="timeline__date--initial">2019</span>
+                  -
+                  <span class="timeline__date--final">2020</span>
+                </p>
+
+                <h5 class="timeline__title">
+                  Lorem, ipsum dolor 2
+                  <span class="timeline__title--company"> - Lorem, ipsum </span>
+                </h5>
+
+                <p class="timeline__description description__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                  accert.
+                </p>
+              </article>
             </li>
           </ul>
         </section>
       </section>
 
       <section id="projects" class="section projects">
-        <h2 class="section__title">Projects</h2>
+        <h2 class="section__title section__title--minor">
+          My
+          <span class="section__title--highlight">Projects</span>
+        </h2>
 
-        <p class="projects__text">
+        <p class="projects__text description__text">
           Here is some of my work that I've done. You can see more of my work in
           my
-          <a href="http://" target="_blank" rel="noopener noreferrer"
+          <a
+            class="projects__text-link account__link"
+            href="https://github.com/EudesSerpa"
+            target="_blank"
+            rel="noopener noreferrer"
             >GitHub account</a
-          >
+          >.
         </p>
 
-        <div class="projects__container">
-          <article class="project">
-            <figure class="project__picture">
-              <img src="#" alt="Project 1" />
+        <ul class="projects__list">
+          <li class="projects__item">
+            <figure class="projects__picture">
+              <div class="projects__image-container">
+                <img
+                  class="projects__image"
+                  src="./assets/images/ecommerce-mockup.png"
+                  alt="Ecommerce image project"
+                  width="340px"
+                  height="340px"
+                />
+              </div>
 
-              <figcaption class="project__caption">
-                <h3 class="project__title">Project 1</h3>
+              <figcaption class="projects__caption">
+                <h3 class="projects__title">Ecommerce Sal&amp;Salsa</h3>
 
-                <p class="project__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-                  accert.
-                </p>
+                <div class="projects__description">
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptas aliquid neque ipsa maxime voluptatum odio iste
+                    commodi sequi omnis excepturi numquam consequuntur, sed
+                    distinctio error accusantium ratione eum! Labore,
+                    praesentium.
+                  </p>
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consequuntur enim quos amet, incidunt ducimus veritatis.
+                  </p>
+                </div>
+
+                <div class="projects__options">
+                  <a
+                    class="projects__option projects__option--see-demo"
+                    href="https://reto4-juventic.herokuapp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Ecommerce demo"
+                    aria-label="See Ecommerce demo"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    class="projects__option projects__option--see-code"
+                    href="https://github.com/EudesSerpa/JuvenTIC-React"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Ecommerce code"
+                    aria-label="See Ecommerce code"
+                  >
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  </a>
+                </div>
               </figcaption>
             </figure>
+          </li>
+          <li class="projects__item">
+            <figure class="projects__picture">
+              <div class="projects__image-container">
+                <img
+                  class="projects__image"
+                  src="./assets/images/giffy-mockup.png"
+                  alt="Gifs search image project"
+                  width="340px"
+                  height="340px"
+                />
+              </div>
 
-            <div class="project__options">
-              <a
-                class="project__option--see-demo"
-                href="http://"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                See demo
-              </a>
-              <a
-                class="project__option--see-code"
-                href="http://"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                See code
-              </a>
-            </div>
-          </article>
-        </div>
+              <figcaption class="projects__caption">
+                <h3 class="projects__title">Giffy | Gif Search</h3>
+
+                <div class="projects__description">
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sapiente voluptates quidem eaque et veniam praesentium
+                    pariatur. Numquam vero in quam.
+                  </p>
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ipsa, cumque!
+                  </p>
+                </div>
+
+                <div class="projects__options">
+                  <a
+                    class="projects__option projects__option--see-demo"
+                    href="https://giffys-search.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Giffy demo"
+                    aria-label="See Giffy demo"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    class="projects__option projects__option--see-code"
+                    href="https://github.com/EudesSerpa/giffy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Giffy code"
+                    aria-label="See Giffy code"
+                  >
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="projects__item">
+            <figure class="projects__picture">
+              <div class="projects__image-container">
+                <img
+                  class="projects__image"
+                  src="./assets/images/rickandmorty-mockup.png"
+                  alt="Rick and Morty SPA image project"
+                  width="340px"
+                  height="340px"
+                />
+              </div>
+
+              <figcaption class="projects__caption">
+                <h3 class="projects__title">
+                  Rick and Morty SPA JavaScript vanilla
+                </h3>
+
+                <div class="projects__description">
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Qui debitis magnam itaque dolore deserunt? Adipisci eos
+                    exercitationem nulla, fugiat harum ducimus explicabo
+                    cupiditate officiis beatae ipsa alias quos qui illum?
+                  </p>
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                    accert.
+                  </p>
+                </div>
+
+                <div class="projects__options">
+                  <a
+                    class="projects__option projects__option--see-demo"
+                    href="https://rick-and-morty-serpadev.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Rick and Morty demo"
+                    aria-label="See Rick and Morty demo"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    class="projects__option projects__option--see-code"
+                    href="https://github.com/EudesSerpa/rick-and-morty"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Rick and Morty code"
+                    aria-label="See Rick and Morty code"
+                  >
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="projects__item">
+            <figure class="projects__picture">
+              <div class="projects__image-container">
+                <img
+                  class="projects__image"
+                  src="./assets/images/hangman-mockup.png"
+                  alt="Hangman image project"
+                  width="340px"
+                  height="340px"
+                />
+              </div>
+
+              <figcaption class="projects__caption">
+                <h3 class="projects__title">Hangman Game</h3>
+
+                <div class="projects__description">
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Animi quam tempore accusamus, totam ducimus, possimus ad
+                    atque optio error ipsum nam modi? Delectus maiores
+                    blanditiis omnis sint doloremque soluta magni.
+                  </p>
+                </div>
+
+                <div class="projects__options">
+                  <a
+                    class="projects__option projects__option--see-demo"
+                    href="https://eudesserpa.github.io/hangman-game/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Hangman demo"
+                    aria-label="See Hangman demo"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    class="projects__option projects__option--see-code"
+                    href="https://github.com/EudesSerpa/hangman-game"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Hangman code"
+                    aria-label="See Hangman code"
+                  >
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="projects__item">
+            <figure class="projects__picture">
+              <div class="projects__image-container">
+                <img
+                  class="projects__image"
+                  src="./assets/images/text-encryption-mockup.png"
+                  alt="Text encrytion image project"
+                  width="340px"
+                  height="340px"
+                />
+              </div>
+
+              <figcaption class="projects__caption">
+                <h3 class="projects__title">Text encrytion</h3>
+
+                <div class="projects__description">
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                    accert. Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Beatae laboriosam laudantium temporibus voluptas
+                    deleniti accusantium dignissimos nisi eius numquam aperiam,
+                    est nobis! Repellat delectus fugiat consequuntur atque
+                    dolor. Quia, nobis.
+                  </p>
+                  <p class="projects__description-text description__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                    accert.
+                  </p>
+                </div>
+
+                <div class="projects__options">
+                  <a
+                    class="projects__option projects__option--see-demo"
+                    href="https://eudesserpa.github.io/text-encryption-decryption/src/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Text encryption demo"
+                    aria-label="See Text encryption demo"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    class="projects__option projects__option--see-code"
+                    href="https://github.com/EudesSerpa/text-encryption-decryption"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="See Text encryption code"
+                    aria-label="See Text encryption code"
+                  >
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
       </section>
 
       <section id="contact" class="section contact">
-        <h2 class="section__title">Contact</h2>
+        <h2 class="section__title section__title--minor">
+          Contact
+          <span class="section__title--highlight">Me</span>
+        </h2>
 
-        <p class="contact__text">
+        <p class="contact__text description__text">
           Do you have any questions? Feel free to contact me.
         </p>
 
-        <form class="contact__form">
-          <div class="contact__form-item">
-            <label class="contact__form-label" for="name"> Name </label>
+        <div class="contact__content">
+          <div class="contact__image"></div>
 
+          <form class="form contact__form">
+            <label for="honeypot" aria-hidden="true" hidden class="honeypot"
+              >Keep this field blank</label
+            >
             <input
-              class="contact__form-input"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your name"
+              id="honeypot"
+              class="honeypot"
+              hidden
+              autocomplete="off"
+              aria-hidden="true"
+              tabindex="-1"
             />
-          </div>
 
-          <div class="contact__form-item">
-            <label class="contact__form-label" for="email"> Email </label>
+            <div class="form__item">
+              <label class="form__label" for="name">Name</label>
 
-            <input
-              class="contact__form-input"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your email"
-            />
-          </div>
+              <p id="name-error" class="form__inline-error" aria-live="off"></p>
 
-          <div class="contact__form-item">
-            <label class="contact__form-label" for="subject"> Subject </label>
+              <div class="form__input-container">
+                <input
+                  id="name"
+                  name="name"
+                  class="form__input"
+                  autocomplete="name"
+                  required
+                  aria-describedby="name-hint name-error"
+                />
 
-            <input
-              class="contact__form-input"
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="Subject"
-            />
-          </div>
+                <div class="form__icon-container">
+                  <span class="form__icon form__icon--valid">
+                    <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                  <span class="form__icon form__icon--invalid">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
 
-          <div class="contact__form-item">
-            <label class="contact__form-label" for="message"> Message </label>
+            <div class="form__item">
+              <label class="form__label" for="email">Email</label>
+              <p id="email-hint" class="form__hint">
+                Hint: The valid email format is. Example:
+                <span class="form__hint--example">hello@world.com</span>.
+              </p>
 
-            <textarea
-              class="contact__form-textarea"
-              name="message"
-              id="message"
-              placeholder="Your message"
-            ></textarea>
-          </div>
+              <p
+                id="email-error"
+                class="form__inline-error"
+                aria-live="off"
+              ></p>
 
-          <input class="contact__form-button" type="submit" value="Send" />
-        </form>
+              <div class="form__input-container">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  class="form__input"
+                  required
+                  aria-describedby="email--hint email-error"
+                />
+
+                <div class="form__icon-container">
+                  <span class="form__icon form__icon--valid">
+                    <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                  <span class="form__icon form__icon--invalid">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <label class="form__label" for="subject">Subject</label>
+              <p id="subject-hint" class="form__hint">
+                Hint: a word with at least 2 letters. Example:
+                <span class="form__hint--example">Hire</span>.
+              </p>
+
+              <p
+                id="subject-error"
+                class="form__inline-error"
+                aria-live="off"
+              ></p>
+
+              <div class="form__input-container">
+                <input
+                  id="subject"
+                  name="subject"
+                  class="form__input"
+                  required
+                  aria-describedby="subject-hint subject-error"
+                />
+
+                <div class="form__icon-container">
+                  <span class="form__icon form__icon--valid">
+                    <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                  <span class="form__icon form__icon--invalid">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <label class="form__label" for="message">Message</label>
+              <p id="message-hint" class="form__hint">
+                Hint: with at least 10 characters. Example:
+                <span class="form__hint--example"
+                  >Hello! I'm interested in your job</span
+                >.
+              </p>
+
+              <p
+                id="message-error"
+                class="form__inline-error"
+                aria-live="off"
+              ></p>
+
+              <div class="form__input-container">
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form__input form__textarea"
+                  rows="5"
+                  cols="50"
+                  required
+                  minlength="10"
+                  aria-describedby="message-hint message-error"
+                ></textarea>
+
+                <div class="form__icon-container">
+                  <span class="form__icon form__icon--valid">
+                    <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                  </span>
+                  <span class="form__icon form__icon--invalid">
+                    <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button class="form__button">Send message</button>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="wrapper">
-        <div class="footer__brand-container">
+      <div class="wrapper footer__content">
+        <a href="#home" class="footer__brand-container">
           <img
-            class="footer__logo"
+            class="footer__brand"
             src="https://i.postimg.cc/VsBTSN9r/logo-white.png"
             alt="Eudes Serpa's logo"
             width="150px"
             height="80px"
           />
-        </div>
+        </a>
 
-        <ul class="footer__social-medias">
-          <li class="footer__social-media">
+        <ul class="social-media__list footer__social-media">
+          <li class="social-media__item">
             <a
-              href="https://www.linkedin.com/in/eudes-serpa-b8a8b817b/"
+              class="social-media__link footer__social-media__link"
+              href="https://www.linkedin.com/in/eudes-serpa"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Eudes Serpa's Linkedin"
+              title="Linkedin"
             >
-              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
             </a>
           </li>
-          <li class="footer__social-media">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i>
+          <li class="social-media__item">
+            <a
+              class="social-media__link footer__social-media__link"
+              href="https://github.com/EudesSerpa"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Eudes Serpa's Github"
+              title="Github"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
           </li>
         </ul>
 
         <p class="footer__copyright">
           Code with
-          <i class="footer__icon" aria-label="love">&#x2764;</i>
+          <i class="footer__icon" aria-label="love"> &#x2764; </i>
           by
           <a
-            class="footer__author-link"
-            href="http://"
+            class="footer__author-link account__link"
+            href="https://www.linkedin.com/in/eudes-serpa"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Eudes Serpa's Linkedin"
           >
-            Eudes Serpa
-          </a>
+            Eudes Serpa</a
+          >
         </p>
       </div>
     </footer>

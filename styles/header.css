@@ -55,16 +55,18 @@
   transition: color .2s ease-in, background-color .2s ease-in;
 }
 
-.header__item:hover {
-  color: var(--secondary-color);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .header__nav-link {
   display: inline-block;
   padding: 1em 0;
   text-align: center;
   cursor: pointer;
+}
+
+.header__nav-link:hover,
+.header__nav-link:active,
+.header__nav-link:focus {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Hambuger menu - Icon */
@@ -94,7 +96,7 @@
 .header__hamburger-line::after {
   width: 24px;
   height: .3em;
-  background-color: var(--tex-on-background);
+  background-color: var(--text-on-background);
   border-radius: .5em;
   transition: transform 1s, background-color 1s;
 }
@@ -219,7 +221,7 @@
     padding: .1em 0 0;
   }
 
-  .header__item:hover {
+  .header__nav-link:hover {
     background-color: initial;
   }
 }

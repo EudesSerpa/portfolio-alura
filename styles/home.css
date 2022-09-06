@@ -1,4 +1,5 @@
 .home {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7,24 +8,68 @@
   min-height: 100vh;
 }
 
-.home__picture {
-  max-width: 360px;
+/* Toggle theme button */
+.btn-theme {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  display: block;
+  width: 4.5em;
+  height: 2em;
+  padding: .1em .25em;
+  border: 2px solid var(--text-disabled);
+  border-radius: 22px;
+  background-color: var(--surface);
+  box-shadow: 0 3px 6px var(--shadow);
+  cursor: pointer;
 }
 
-.home__picture-img {
+.btn-theme__handle {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: var(--text-on-surface);
+  transition: transform .3s cubic-bezier(.18, .69, .35, 1.15);
+}
+
+.btn-theme--dark .btn-theme__handle {
+  transform: translateX(2.25em);
+}
+
+
+.home__picture-container {
+  max-width: 360px;
   background-color: var(--primary-color);
   border-radius: 50%;
   box-shadow:
     inset 0 15px 0 10px var(--secondary-color),
-    inset 0 30px 20px 15px rgba(0, 0, 0, .15);
+    inset -5px 30px 20px 15px rgba(0, 0, 0, .15);
   border: 3px solid var(--secondary-color);
+  overflow: hidden;
+  transition: box-shadow .5s ease-in;
+}
+
+.home__picture-img {
+  filter: drop-shadow(-10px 30px 20px rgba(0, 0, 0, .3));
+  transition: transform .4s ease-in, filter .4s ease-in;
+}
+
+.home__picture-container:hover {
+  box-shadow:
+    inset 0 20px 0 15px var(--secondary-color),
+    inset -15px 30px 20px 15px rgba(0, 0, 0, .15);
+}
+
+.home__picture-container:hover .home__picture-img {
+  filter: drop-shadow(-30px 40px 20px rgba(0, 0, 0, .5));
+  transform: scale(1.35);
 }
 
 .home__description {
   display: flex;
   flex-direction: column;
   gap: 1.5em;
-  font-size: var(--font-medium-size);
   text-align: center;
 }
 
@@ -48,13 +93,9 @@
 
 .home__text {
   max-width: 60ch;
-  font-size: 1.1em;
-  line-height: 1.2;
-  text-align: initial;
 }
 
 .home__btn-download__container {
-  max-width: fit-content;
   margin: 0 auto;
 }
 
@@ -83,20 +124,29 @@
 
 /* Button scroll down */
 .btn-scroll {
+  --size: 52px;
   position: absolute;
   bottom: 1em;
-  left: 50%;
+  left: calc(50% - (var(--size) / 2));
   display: none;
-  width: 52px;
-  height: 52px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   border: none;
   color: var(--text-on-primary);
   background-color: var(--secondary-color);
   box-shadow: 0 3px 6px var(--shadow);
   cursor: pointer;
-  transition: color .3s ease-in, background-color .3s ease-in;
+  transition: color .3s ease-in, background-color .3s ease-in, transform .3s ease-out;
   z-index: 10;
+  animation: pulse .5s;
+}
+
+.btn-scroll:hover,
+.btn-scroll:active,
+.btn-scroll:focus {
+  color: var(--text-on-surface);
+  background-color: var(--surface);
 }
 
 .btn-scroll::after {
@@ -108,13 +158,6 @@
   border-radius: 50%;
   background-color: inherit;
   animation: blob 2s infinite;
-}
-
-.btn-scroll:hover,
-.btn-scroll:active,
-.btn-scroll:focus {
-  color: var(--text-on-surface);
-  background-color: var(--surface);
 }
 
 .btn-scroll__line {

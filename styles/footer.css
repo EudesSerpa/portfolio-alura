@@ -1,0 +1,52 @@
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: .8em;
+  padding-bottom: 1em;
+}
+
+.footer__brand-container {
+  width: 140px;
+  height: 70px;
+}
+
+.footer__brand {
+  width: 100%;
+  height: 100%;
+}
+
+.social-media__list {
+  margin-top: .2em;
+}
+
+.footer__social-media__link {
+  width: 38px;
+  height: 38px;
+  font-size: var(--font-large-size);
+}
+
+.footer__copyright {
+  font-size: var(--font-size);
+  color: var(--text-on-surface);
+}
+
+.footer__icon {
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+.footer__author-link {
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+
+/* Responsive */
+@media screen and (min-width: 540px) {
+  .footer__content {
+    justify-content: space-between;
+    gap: 0;
+  }
+}

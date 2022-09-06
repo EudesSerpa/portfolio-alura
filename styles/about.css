@@ -1,0 +1,224 @@
+.subsection {
+  margin: 1.5em 0;
+}
+
+.about__text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.about__description {
+  flex: 2;
+}
+
+.about__description-text {
+  margin-block: .5em;
+}
+
+.cube-container {
+  flex: 1;
+  position: relative;
+  display: none;
+  width: 210px;
+  height: 210px;
+  margin: 2em auto 0;
+  perspective: 800px;
+}
+
+.cube {
+  margin-left: calc(50% - 100px);
+  transform: translateZ(-100px);
+  transform-style: preserve-3d;
+  transform-origin: 100px 100px 0;
+  animation: spinCube 18s ease-in-out infinite;
+}
+
+.cube__face {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--surface);
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, .1);
+}
+
+.cube__face--front {
+  transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube__face--back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube__face--right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube__face--left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube__face--top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Skills */
+.about__skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  align-items: center;
+  gap: 1em;
+}
+
+.about__skills-item,
+.about__hobbies-item {
+  color: var(--text-on-surface);
+  background-color: var(--surface);
+  box-shadow: 0 3px 6px var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+.about__skills-item {
+  display: grid;
+  place-items: center;
+  gap: .5em;
+  padding: .5em;
+}
+
+.about__skills-icon {
+  width: 42px;
+  aspect-ratio: 1;
+}
+
+.about__skills-item__caption {
+  font-size: .8em;
+  text-transform: capitalize;
+}
+
+/* Hobbies */
+.about__hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.about__hobbies-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 230px;
+  padding: .5em 1em;
+}
+
+.about__hobbies-icon {
+  width: 120px;
+  aspect-ratio: 1;
+}
+
+/* Timeline */
+.timeline__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: .5em 0 0 .5em;
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 2em;
+  border-left: 1.5px solid var(--surface);
+}
+
+.timeline__icon {
+  --size: 42px;
+  position: absolute;
+  top: 0;
+  left: calc(var(--size) / -2);
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--text-on-surface);
+  background-color: var(--surface);
+}
+
+.timeline__icon.current-job {
+  color: var(--text-on-secondary);
+  background-color: var(--secondary-color);
+}
+
+.timeline__title {
+  margin-block: .5em .8em;
+  font-size: 1.2em;
+}
+
+.timeline__title--company {
+  color: var(--text-medium-emphasis);
+  font-size: .9em;
+  font-weight: 400;
+}
+
+.timeline__description {
+  max-width: 50ch;
+  color: var(--text-high-emphasis);
+  font-size: .9em;
+}
+
+.timeline__date {
+  display: inline-block;
+  padding: .3em .6em;
+  border-radius: 15px;
+  color: var(--text-on-surface);
+  background-color: var(--surface);
+  font-size: .7em;
+}
+
+
+/* Animations */
+@keyframes spinCube {
+
+  from,
+  to {
+    transform: translateZ(-100px) rotate(0deg, 0deg, 0deg);
+  }
+
+  16% {
+    transform: translateZ(-100px) rotateY(-90deg);
+  }
+
+  33% {
+    transform: translateZ(-100px) rotateX(-90deg);
+  }
+
+  50% {
+    transform: translateZ(-100px) rotateY(-180deg);
+  }
+
+  66% {
+    transform: translateZ(-100px) rotateX(90deg);
+  }
+
+  83% {
+    transform: translateZ(-100px) rotateY(90deg);
+  }
+}
+
+
+/* Responsive */
+@media (min-width: 1200px) {
+  .cube-container {
+    display: block;
+  }
+}
